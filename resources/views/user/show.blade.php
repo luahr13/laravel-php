@@ -13,7 +13,7 @@
     Nome: {{ $user->name}}<br>
     E-mail: {{ $user->email}}<br>
     Cadastrado: {{ $user->created_at->format('d/m/Y H:i:s') }}<br>
-    Atualizado: {{ $user->updated_at->format('d/m/Y H:i:s
+    Atualizado: {{ $user->updated_at->format('d/m/Y H:i:s') }}<br>
 
 </body>
 </html>
