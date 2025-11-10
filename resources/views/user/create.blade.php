@@ -32,6 +32,7 @@
         <input type="password" name="password" placeholder="Senha com no mínimo 6 caracteres" value="{{ old('password') }}">
         <br><br>
 
-        <button type="submit">Cadastrar</button>
+        <button type="submit">Salvar</button>
+    </form>
 </body>
 </html>

@@ -25,7 +25,7 @@ class UserController extends Controller
     public function create()
     {
         // Carrega a view 'user.create'
-        return view('user.show', ['user' => $user]);
+        return view('user.create');
     }
 
     public function store(UserRequest $request)
@@ -39,6 +39,28 @@ class UserController extends Controller
             'password' => $request->password,
         ]);
 
+        // Redireciona para a lista de usuários com uma mensagem de sucesso
         return redirect()->route('user.index')->with('success', 'Usuário cadastrado com sucesso!');
+    }
+
+    public function edit(User $user)
+    {
+        // Carrega a view 'user.edit'
+        return view('user.edit', ['user' => $user]);
+    }
+
+    public function update(UserRequest $request, User $user)
+    {
+        // Validar o formulário (já está sendo feito no UserRequest)
+        $request->validated();
+
+        $user->update([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => $request->password,
+        ]);
+        // Redireciona para a lista de usuários com uma mensagem de sucesso
+        return redirect()->route('user.show', ['user' => $user->id])->with('success', 'Usuário atualizado com sucesso!');
+        dd($request);
     }
 }
