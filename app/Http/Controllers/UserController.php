@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\UserRequest;
+use App\Models\User;
 
 class UserController extends Controller
 {
@@ -22,5 +23,13 @@ class UserController extends Controller
     {
         // Validar o formulário
         $request->validated();
+        // Criar um novo usuário
+        User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => $request->password,
+        ]);
+
+        return redirect()->route('user.index')->with('success', 'Usuário cadastrado com sucesso!');
     }
 }

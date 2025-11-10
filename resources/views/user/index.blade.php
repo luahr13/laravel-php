@@ -7,6 +7,11 @@
 </head>
 <body>
     <a href="{{ route('user.create') }}">Cadastrar</a>
-    <h2>Página e usuários</h2>
+    <h2>Lista de usuários</h2>
+    @if (session('success'))
+        <p style="color: #008000;">
+            {{ session('success') }}
+        </p>
+    @endif
 </body>
 </html>
