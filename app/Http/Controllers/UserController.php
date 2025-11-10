@@ -16,10 +16,16 @@ class UserController extends Controller
         return view('user.index', ['users' => $users]);
     }
 
+    public function show(User $user)
+    {
+        // Carrega a view 'user.show'
+        return view('user.show', ['user' => $user]);
+    }
+
     public function create()
     {
         // Carrega a view 'user.create'
-        return view('user.create');
+        return view('user.show', ['user' => $user]);
     }
 
     public function store(UserRequest $request)
