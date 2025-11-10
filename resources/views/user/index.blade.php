@@ -13,5 +13,14 @@
             {{ session('success') }}
         </p>
     @endif
+
+    @forelse ($users as $user)
+        ID: {{ $user->id}}<br>
+        Nome: {{ $user->name}}<br>
+        E-mail: {{ $user->email}}<br>
+        <hr>
+    @empty
+        
+    @endforelse
 </body>
 </html>

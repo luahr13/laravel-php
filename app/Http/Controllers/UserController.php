@@ -9,8 +9,11 @@ class UserController extends Controller
 {
     public function index()
     {
+        //Recupera todos os usuários
+        $users = User::orderByDesc('id')->get();
+
         // Carrega a view 'user.index'
-        return view('user.index');
+        return view('user.index', ['users' => $users]);
     }
 
     public function create()
