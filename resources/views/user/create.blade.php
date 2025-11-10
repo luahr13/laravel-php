@@ -6,7 +6,7 @@
     <title>Users</title>
 </head>
 <body>
-    <a href="{{ route('user.create') }}">Cadastrar</a>
-    <h2>Página e usuários</h2>
+    <a href="{{ route('user.index') }}">Listar</a>
+    <h2>Cadastrar Usuário</h2>
 </body>
 </html>

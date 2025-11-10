@@ -11,4 +11,10 @@ class UserController extends Controller
         // Carrega a view 'user.index'
         return view('user.index');
     }
+
+    public function create()
+    {
+        // Carrega a view 'user.create'
+        return view('user.create');
+    }
 }
