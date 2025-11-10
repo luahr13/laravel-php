@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [UserController::CLass, 'index'])->name('user.index');
+Route::get('/', [UserController::Class, 'index'])->name('user.index');
