@@ -9,7 +9,7 @@
     <a href="{{ route('user.index') }}">Listar</a>
     <h2>Cadastrar Usuário</h2>
 
-    <form action="#" method="POST">
+    <form action="{{ route('user.store') }}" method="POST">
         @csrf
         @method('POST')
 
